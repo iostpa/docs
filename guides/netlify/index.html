@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.825083150305">
+    <meta name="turbo-cache-control" content="no-cache" data-turbo-track="reload" data-track-token="3.12.0.825083719818">
 
     <!-- See retype.com -->
     <meta name="generator" content="Retype 3.12.0">
@@ -31,12 +31,12 @@
     <script data-cfasync="false">(function(){var cl=document.documentElement.classList,ls=localStorage.getItem("retype_scheme"),hd=cl.contains("dark"),hl=cl.contains("light"),wm=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches;if(ls==="dark"||(!ls&&wm&&!hd&&!hl)){cl.remove("light");cl.add("dark")}else if(ls==="light"||(!ls&&!wm&&!hd&&!hl)){cl.remove("dark");cl.add("light")}})();</script>
 
     <link id="retype-favicon" rel="icon" href="../../media/logo_circle.png" />
-    <link href="../../resources/css/retype.css?v=3.12.0.825083150305" rel="stylesheet">
+    <link href="../../resources/css/retype.css?v=3.12.0.825083719818" rel="stylesheet">
 
-    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.825083150305" data-turbo-eval="false" defer></script>
+    <script data-cfasync="false" src="../../resources/js/config.js?v=3.12.0.825083719818" data-turbo-eval="false" defer></script>
     <script data-cfasync="false" src="../../resources/js/retype.js?v=3.12.0" data-turbo-eval="false" defer></script>
-    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.825083150305" data-turbo-eval="false" defer></script>
-    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.12.0.825083150305" defer></script>
+    <script id="lunr-js" data-cfasync="false" src="../../resources/js/lunr.js?v=3.12.0.825083719818" data-turbo-eval="false" defer></script>
+    <script id="prism-js" data-cfasync="false" src="../../resources/js/prism.js?v=3.12.0.825083719818" defer></script>
 </head>
 <body>
     <div id="retype-app" class="relative text-base antialiased text-base-text bg-base-bg font-body">
@@ -232,13 +232,21 @@
     </h2>
 </doc-anchor-target>
 <p>First, create a website on Netlify. Follow the instructions in the <a href="https://docs.netlify.com/">Netlify Docs</a>.</p>
+<doc-anchor-target id="adding-the-domain-to-netlify">
+    <h2>
+        <doc-anchor-trigger class="header-anchor-trigger" to="#adding-the-domain-to-netlify">#</doc-anchor-trigger>
+        <span>Adding the domain to Netlify</span>
+    </h2>
+</doc-anchor-target>
+<p>To get the records for Netlify, navigate to <strong>Site Settings &gt; Domain Management &gt; Custom Domains</strong> and add <code translate="no" v-pre>subdomain.is-a.dev</code> (as an example, you should add the domain which you want to register) in the given field.</p>
 <doc-anchor-target id="creating-the-domain-file">
     <h3>
         <doc-anchor-trigger class="header-anchor-trigger" to="#creating-the-domain-file">#</doc-anchor-trigger>
         <span>Creating the Domain File</span>
     </h3>
 </doc-anchor-target>
-<p>Create a JSON file inside the <code translate="no" v-pre>domains</code> directory (<code translate="no" v-pre>domains/subdomain.json</code>) with the following content and submit a pull request:</p>
+<p>You should see two domains that Netlify added, <code translate="no" v-pre>subdomain.is-a.dev</code> and <code translate="no" v-pre>www.subdomain.is-a.dev</code>. You have to make both of them so that you can successfully add a domain to Netlify. (<code translate="no" v-pre>subdomain</code> being your domain name of choice, of course)</p>
+<p>Create a JSON file inside the <code translate="no" v-pre>domains</code> directory called <code translate="no" v-pre>subdomain.json</code> with the following content:</p>
 <div class="codeblock-wrapper"><doc-codeblock>
 <pre translate="no" class="language-json"><code v-pre class="language-json">{
     &quot;owner&quot;: {
@@ -250,7 +258,53 @@
     }
 }</code></pre>
 </doc-codeblock></div>
-<p><strong>Note:</strong> In the owner section, you can add any social media handle, such as Discord. If you add another social media account, you can omit the email field. However, the GitHub username is mandatory. Don&#x27;t forget to provide a preview of your website in your pull request.</p>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Note: In the owner section, you can add any social media handle, such as Discord. If you add another social media account, you can omit the email field. However, the GitHub username is mandatory. Don&#x27;t forget to provide a preview of your website in your pull request.</p>
+        </div>
+    </div>
+</div>
+<p>After that, create another JSON file in the same directory called <code translate="no" v-pre>www.subdomain.json</code> with the following content:</p>
+<div class="codeblock-wrapper"><doc-codeblock>
+<pre translate="no" class="language-json"><code v-pre class="language-json">{
+    &quot;owner&quot;: {
+        &quot;username&quot;: &quot;github-username&quot;,
+        &quot;email&quot;: &quot;me@example.com&quot;
+    },
+    &quot;records&quot;: {
+        &quot;CNAME&quot;: &quot;website.netlify.app&quot;
+    }
+}</code></pre>
+</doc-codeblock></div>
+<div class="flex mb-6">
+    <div class="shrink-0 w-1.5 rounded-tl-lg rounded-bl-lg bg-callout-primary"></div>
+    <div class="flex w-full py-4 border border-l-0 rounded-tr-lg rounded-br-lg doc-callout bg-callout-base-bg border-callout-base-border" role="alert">
+        <div class="flex items-center ml-4 h-7">
+            <svg xmlns="http://www.w3.org/2000/svg" class="mb-px text-callout-primary" width="22" height="22" viewBox="0 0 24 24" role="presentation">
+                <g fill="currentColor"><g>
+                    <path d="M12 1C5.93 1 1 5.93 1 12s4.93 11 11 11 11-4.93 11-11S18.07 1 12 1zm0 20c-4.96 0-9-4.04-9-9s4.04-9 9-9 9 4.04 9 9-4.04 9-9 9z"></path>
+                    <path d="M12 11c-.55 0-1 .45-1 1v4c0 .55.45 1 1 1s1-.45 1-1v-4c0-.55-.45-1-1-1zM12.01 7c-.56 0-1 .45-1 1s.45 1 1 1 1-.45 1-1-.45-1-1-1z"></path>
+                    <path fill="none" d="M0 0h24v24H0z"></path>
+                </g></g>
+            </svg>
+        </div>
+        <div class="pr-5 ml-3 w-full">
+<p>Note: The CNAME record should be what Netlify gave you, which should be most of the time the website&#x27;s domain which Netlify generated, like <code translate="no" v-pre>website.netlify.app</code>.</p>
+        </div>
+    </div>
+</div>
+<p>After you&#x27;ve made both of the files, make a pull request and wait.</p>
 <doc-anchor-target id="configuring-netlify">
     <h2>
         <doc-anchor-trigger class="header-anchor-trigger" to="#configuring-netlify">#</doc-anchor-trigger>
@@ -258,9 +312,7 @@
     </h2>
 </doc-anchor-target>
 <ul>
-<li>After your pull request is merged, you may need to configure your Netlify website to use the new subdomain. Visit your Netlify website&#x27;s dashboard.</li>
-<li>Navigate to <strong>Site Settings &gt; Domain Management &gt; Custom Domains</strong> and add <code translate="no" v-pre>subdomain.is-a.dev</code> in the given field.</li>
-<li>Netlify will provide a verification step, usually requiring you to add a DNS record. You should be able to skip this step if your subdomain is already pointing to Netlify&#x27;s IP address (<code translate="no" v-pre>75.2.60.5</code>).</li>
+<li>After your pull request is merged, you should be able to connect the domain with Netlify.</li>
 </ul>
 <doc-anchor-target id="final-steps">
     <h3>
