@@ -1,5 +1,5 @@
 !!!danger
-This hosting provider is currently showing users that they need to add their domain to the user's own Cloudflare DNS zone in order to use Cloudflare Pages. Until we know why its happening we recommend to use a different hosting provider.
+This hosting provider is currently showing users that they need to add their domain to the user's own Cloudflare DNS zone in order to use Cloudflare Pages. Until we know why it's happening, we recommend that you use a different hosting provider.
 !!!
 
 # Setting up Cloudflare Pages with an is-a.dev subdomain
